@@ -1,0 +1,15 @@
+<mat-toolbar>
+    <span [matBadge]="(userList$ | async)?.length" matBadgeOverlap="false">My Users</span>
+    <span class="user-list__spacer"></span>
+    <button mat-raised-button color="accent" aria-label="Add user" (click)="handleAddUser()">
+        <mat-icon>add</mat-icon>
+        Add user
+    </button>
+</mat-toolbar>
+<div class="user-list__wrapper">
+    <mat-list>
+        <mat-list-item *ngFor="let user of (userList$ | async); trackBy: trackUserById">
+            <app-user-detail [userData]="user" (deleteUserEvent)="handleDeleteUserEvent($event)" (editUserEvent)="handleEditUserEvent($event)"></app-user-detail>
+        </mat-list-item>
+    </mat-list>
+</div>

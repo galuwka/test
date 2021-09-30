@@ -1,0 +1,22 @@
+.user-list {
+  &__wrapper {
+    height: 900px;
+    overflow: auto;
+    width: 500px;
+  }
+
+  &__spacer {
+    flex: 1 1 auto;
+  }
+}
+
+mat-toolbar {
+  width: 500px;
+}
+
+mat-list {
+  .mat-list-item {
+    height: auto;
+    margin: 10px 0;
+  }
+}
