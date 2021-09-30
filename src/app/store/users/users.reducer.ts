@@ -26,6 +26,7 @@ export const reducer = createReducer(
         ...state
     })),
 
+    // TODO Move logic to BE and add proper effect
     on(userDelete, (state: UsersState, {userId}) => {
         const updatedUserList = state.usersList.filter((user) => user.id !== userId);
         return ({
@@ -40,6 +41,7 @@ export const reducer = createReducer(
         })
     ),
 
+    // TODO Move logic to BE and add proper effect
     on(userEdit, (state: UsersState, {userChanged}) => {
             const userIndex = state.usersList.findIndex(user => user.id === userChanged.id);
             const arrToUpdate = [...state.usersList];
