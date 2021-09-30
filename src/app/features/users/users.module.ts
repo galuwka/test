@@ -13,6 +13,7 @@ import {FormsModule} from "@angular/forms";
 import {MatDialogModule} from "@angular/material/dialog";
 import {MatInputModule} from "@angular/material/input";
 import {MatBadgeModule} from "@angular/material/badge";
+import {ScrollingModule} from "@angular/cdk/scrolling";
 
 
 
@@ -36,7 +37,8 @@ import {MatBadgeModule} from "@angular/material/badge";
         FormsModule,
         MatDialogModule,
         MatInputModule,
-        MatBadgeModule
+        MatBadgeModule,
+        ScrollingModule
     ],
     entryComponents: [UserDialogComponent]
 })

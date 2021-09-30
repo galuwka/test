@@ -6,10 +6,11 @@
         Add user
     </button>
 </mat-toolbar>
-<div class="user-list__wrapper">
-    <mat-list>
-        <mat-list-item *ngFor="let user of (userList$ | async); trackBy: trackUserById">
-            <app-user-detail [userData]="user" (deleteUserEvent)="handleDeleteUserEvent($event)" (editUserEvent)="handleEditUserEvent($event)"></app-user-detail>
+<mat-list>
+    <cdk-virtual-scroll-viewport itemSize="50" class="user-list__wrapper">
+        <mat-list-item *cdkVirtualFor="let user of (userList$ | async); trackBy: trackUserById">
+            <app-user-detail [userData]="user" (deleteUserEvent)="handleDeleteUserEvent($event)"
+                             (editUserEvent)="handleEditUserEvent($event)"></app-user-detail>
         </mat-list-item>
-    </mat-list>
-</div>
+    </cdk-virtual-scroll-viewport>
+</mat-list>

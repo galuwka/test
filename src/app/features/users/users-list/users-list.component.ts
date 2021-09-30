@@ -37,12 +37,6 @@ export class UsersListComponent implements OnInit {
     handleAddUser() {
         const dialogRef = this.dialog.open(UserDialogComponent, {
             width: '250px',
-            data: {
-                firstName: '',
-                lastName: '',
-                email: '',
-                birthDate: ''
-            }
         });
 
         dialogRef.afterClosed().subscribe(result => {
@@ -53,11 +47,11 @@ export class UsersListComponent implements OnInit {
     handleEditUserEvent(event: UserData) {
         const dialogEditRef = this.dialog.open(UserDialogComponent, {
             width: '250px',
-            data: event
+            data: event,
+            disableClose: true
         });
-
         dialogEditRef.afterClosed().subscribe(result => {
-            this.store.dispatch(userEdit({userChanged: {...result, ...{id: event.id}}}))
+            this.store.dispatch(userEdit({userChanged: {...result, id: event.id}}))
         });
     }
 

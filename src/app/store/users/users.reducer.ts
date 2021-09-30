@@ -2,7 +2,7 @@ import {Action, createReducer, on} from '@ngrx/store';
 import {UserData} from "../../core/models/user-data";
 import {userAdd, userDelete, userEdit, usersListGet, usersListGetFail, usersListGetSuccess} from "./users.action";
 
-const UsersInitialState: any = {
+const UsersInitialState: UsersState = {
     usersList: [],
 };
 

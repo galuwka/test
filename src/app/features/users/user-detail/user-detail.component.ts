@@ -8,7 +8,7 @@ import {UserData} from "../../../core/models/user-data";
     styleUrls: ['./user-detail.component.scss']
 })
 export class UserDetailComponent implements OnInit {
-    @Input() userData: UserData | undefined;
+    @Input() userData!: UserData;
     @Output() deleteUserEvent = new EventEmitter<number>();
     @Output() editUserEvent = new EventEmitter<UserData>();
 
