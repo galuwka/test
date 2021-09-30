@@ -31,5 +31,5 @@ To get more help on the Angular CLI use `ng help` or go check out the [Angular C
 
  - Permission model (not clear how to handle user role)
  - Error Handling 
- - Loading State
+ - Loading State/ Snackbar to show message on saving/editing/deleting
  - Reactive forms with proper validation

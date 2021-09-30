@@ -10,7 +10,7 @@ import {usersListGet, usersListGetFail, usersListGetSuccess} from "./users.actio
 export class UsersListEffects {
     constructor(private actions$: Actions, private apiUsersService: ApiUsersService) {}
 
-    // TODO Improve error handling and loading state
+    // TODO Improve error handling and loading state/snackbar to show message on saving/editing/deleting
     usersList$ = createEffect(() =>
         this.actions$.pipe(
             ofType(usersListGet),
